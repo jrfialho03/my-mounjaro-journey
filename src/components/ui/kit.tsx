@@ -64,6 +64,15 @@ const sizes: Record<Size, string> = {
   lg: "h-13 px-5 text-base rounded-2xl",
 };
 
+export function buttonClass(variant: Variant = "primary", size: Size = "md", extra?: string) {
+  return cn(
+    "inline-flex shrink-0 items-center justify-center gap-2 font-semibold transition-all duration-200 active:scale-[0.97]",
+    variants[variant],
+    sizes[size],
+    extra,
+  );
+}
+
 export function Button({
   variant = "primary",
   size = "md",

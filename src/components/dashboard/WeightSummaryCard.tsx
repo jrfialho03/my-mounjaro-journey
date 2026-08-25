@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowDown, Scale } from "lucide-react";
 
-import { Button, Card, CardTitle, EmptyState, Progress } from "@/components/ui/kit";
+import { Card, CardTitle, EmptyState, Progress, buttonClass } from "@/components/ui/kit";
 import { formatKg } from "@/lib/actions";
 import { useStore } from "@/lib/store";
 import { weightProgress } from "@/lib/selectors";
@@ -19,9 +19,9 @@ export function WeightSummaryCard() {
           title="Ainda não há registros"
           description="Registre seu primeiro peso para começar a acompanhar sua evolução."
           action={
-            <Button asChild={false} variant="soft">
-              <Link to="/peso">Registrar peso</Link>
-            </Button>
+            <Link to="/peso" className={buttonClass("soft")}>
+              Registrar peso
+            </Link>
           }
         />
       </Card>
@@ -47,9 +47,9 @@ export function WeightSummaryCard() {
       <p className="num mt-2 text-xs font-semibold text-primary">
         {Math.round(p.percent)}% da meta alcançada
       </p>
-      <Button variant="soft" fullWidth className="mt-4" asChild={false}>
-        <Link to="/peso">Ver evolução completa</Link>
-      </Button>
+      <Link to="/peso" className={buttonClass("soft", "md", "mt-4 w-full")}>
+        Ver evolução completa
+      </Link>
     </Card>
   );
 }
