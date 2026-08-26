@@ -85,7 +85,7 @@ export function WeightChart() {
                   fontSize: 12,
                 }}
                 labelFormatter={(_, payload) =>
-                  payload?.[0］ ? formatShort(String(payload[0].payload.date)) : ""
+                  payload?.[0] ? formatShort(String(payload[0].payload.date)) : ""
                 }
                 formatter={(value: number) => [`${value} kg`, "Peso"]}
               />
